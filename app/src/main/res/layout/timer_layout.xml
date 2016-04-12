@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <Chronometer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chronometer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="71dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/timer_start"
+        android:id="@+id/timerStartButton"
+        android:layout_below="@+id/chronometer"
+        android:layout_toStartOf="@+id/chronometer"
+        android:layout_marginTop="44dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/timer_reset"
+        android:id="@+id/timerResetButton"
+        android:layout_alignTop="@+id/timerStartButton"
+        android:layout_toEndOf="@+id/chronometer" />
+
+</RelativeLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ratio_grounds"
+        android:id="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="123dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/coffeeEditText"
+        android:layout_below="@+id/textView3"
+        android:enabled="true"
+        android:editable="true"
+        android:layout_alignEnd="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:inputType="number" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/coffeeUnitSpinner"
+        android:layout_alignTop="@+id/coffeeEditText"
+        android:layout_toEndOf="@+id/coffeeEditText"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ratio_water"
+        android:id="@+id/textView4"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/waterEditText"
+        android:enabled="true"
+        android:editable="true"
+        android:inputType="number"
+        android:layout_below="@+id/textView4"
+        android:layout_alignStart="@+id/coffeeEditText"
+        android:layout_toStartOf="@+id/coffeeUnitSpinner" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/waterUnitSpinner"
+        android:layout_alignTop="@+id/waterEditText"
+        android:layout_toEndOf="@+id/waterEditText" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ratio_calculate"
+        android:id="@+id/ratioCalcButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="52dp" />
+
+</RelativeLayout>
