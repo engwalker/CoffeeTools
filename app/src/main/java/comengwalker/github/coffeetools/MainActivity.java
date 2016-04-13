@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        assert fab != null;
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,20 +34,25 @@ public class MainActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+        //TODO: add recipe main fragment that will work with FAB
+        fab.hide();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        assert drawer != null;
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        assert navigationView != null;
         navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        assert drawer != null;
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -70,9 +76,11 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_about) {
+            //basic about me info
             Toast.makeText(MainActivity.this, "Made by Jeremy Engman", Toast.LENGTH_SHORT).show();
             return true;
         }
+        //TODO: add app settings
         /*else if (id == R.id.action_settings) {
             return true;
         }*/
@@ -90,22 +98,27 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_timer) {
             // Handle the timer action
+            //fragment manager transaction to replace main content frame
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame,
                             new TimerFragment())
                     .commit();
+            assert fab != null;
             fab.hide();
 
         } else if (id == R.id.nav_ratio) {
             // Handle the ratio calculator action
+            //fragment manager transaction to replace main content frame
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame,
                             new RatioFragment())
                     .commit();
+            assert fab != null;
             fab.hide();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        assert drawer != null;
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

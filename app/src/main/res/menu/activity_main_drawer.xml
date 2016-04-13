@@ -10,7 +10,8 @@
             android:id="@+id/nav_ratio"
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/navigation_ratio" />
-        <!--<item
+        <!--cleaned up nav menu, add further tools here
+        <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Slideshow" />

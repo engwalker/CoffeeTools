@@ -12,6 +12,8 @@ import android.widget.Chronometer;
 
 /**
  * Created by jeremy on 4/11/16.
+ * TODO: add option to reverse the countdown/timer
+ * TODO: add checkpoint and finished messages/alerts
  */
 public class TimerFragment extends Fragment implements OnClickListener, View.OnClickListener {
 

@@ -16,6 +16,8 @@ import java.text.NumberFormat;
 
 /**
  * Created by jeremy on 4/11/16.
+ * TODO: add ounces and cups to unit spinner, might need second string array for water
+ * TODO: add option to change ratio, but give default and explanation
  */
 public class RatioFragment extends Fragment implements OnClickListener, View.OnClickListener{
 
@@ -53,12 +55,12 @@ public class RatioFragment extends Fragment implements OnClickListener, View.OnC
 
     @Override
     public void onClick(View v) {
+        //pull info from edittext, calculate based on constant and output to other edittext
+        //TODO: add option to change ratio and assign to recipes
         int groundsWeight = Integer.parseInt(coffeeEditText.getText().toString());
         double waterWeight = groundsWeight * ratio;
         NumberFormat resultFormat = new DecimalFormat("#0");
-        //waterWeight = String.format("%.2f",waterWeight);
-        //String results = null;
-        //results.format("%.2f", waterWeight);
+
         waterEditText.setText(resultFormat.format(waterWeight));
     }
 }
