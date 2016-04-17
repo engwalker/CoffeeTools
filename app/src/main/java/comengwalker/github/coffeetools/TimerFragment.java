@@ -3,6 +3,7 @@ package comengwalker.github.coffeetools;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,11 +30,14 @@ public class TimerFragment extends Fragment implements OnClickListener, View.OnC
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //inflate view and define UI
         myView = inflater.inflate(R.layout.timer_layout, container, false);
         chronometer = (Chronometer) myView.findViewById(R.id.chronometer);
         startButton = (Button) myView.findViewById(R.id.timerStartButton);
         Button resetButton = (Button) myView.findViewById(R.id.timerResetButton);
-
+        FloatingActionButton fab = (FloatingActionButton) myView.findViewById(R.id.fab);
+        //hide fab for now until I get brewing steps implemented
+        fab.hide();
         //((Button) myView.findViewById(R.id.timerStartButton)).setOnClickListener(this);
         startButton.setOnClickListener(this);
         resetButton.setOnClickListener(this);
@@ -65,7 +69,7 @@ public class TimerFragment extends Fragment implements OnClickListener, View.OnC
                 chronometer.stop();
                 chronometer.setBase(SystemClock.elapsedRealtime());
                 timeAtStop=0;
-                startButton.setText(getText(R.string.timer_stop));
+                startButton.setText(getText(R.string.timer_start));
                 break;
         }
     }
