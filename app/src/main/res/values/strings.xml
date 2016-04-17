@@ -5,6 +5,8 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_timer">Timer</string>
     <string name="navigation_ratio">Ratio Calculator</string>
+    <string name="navigation_header">Coffee Tools</string>
+    <string name="icon_description">Coffee Tools main icon</string>
 
     <string name="action_settings">Settings</string>
     <string name="action_about">About</string>
